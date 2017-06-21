@@ -1,0 +1,30 @@
+@import url('https://fonts.googleapis.com/css?family=Abril+Fatface|Inconsolata');
+
+body{
+    font-family: 'Inconsolata', monospace;
+    background-color: #6E6E6E;
+}
+
+h1{
+  font-family: 'Abril Fatface', cursive;
+  color: white;
+  margin-bottom: 10%;
+}
+.container{
+  text-align: center;
+}
+.ajoutPlat{
+  background-color: white;
+  width: 30%;
+  padding: 2%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.ajoutPlat input{
+  margin-bottom: 4%;
+  margin-top: 2%;
+  width: 100%;
+}
+input[type=text]:focus {
+    border: 3px solid #555;
+}
