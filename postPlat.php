@@ -7,6 +7,9 @@
   </head>
   <body>
 
+    <div class="container">
+      <div class="envoiOk">
+        <p class="textEnvoiOk">
     <?php
     require_once('config/connexion.php');
 
@@ -25,7 +28,7 @@
         {
           // On peut valider le fichier et le stocker définitivement
           move_uploaded_file($_FILES['imgPlat']['tmp_name'], 'uploads/' . basename($_FILES['imgPlat']['name']));
-          echo '<div class="envoiOk">L\'envoi a bien été effectué !</div>';
+          echo 'L\'envoi a bien été effectué !';
         }
       }
     }
@@ -43,8 +46,10 @@
     	));
     $req->closeCursor();
 
-    echo '<div> <a href="listePlat.php"> Voir les plats </div>';
   ?>
-
+        </p>
+        <a href="listePlat.php"> Voir les plats</a>
+      </div>
+    </div>
   </body>
 </html>

@@ -28,7 +28,7 @@ $_SESSION['prixMenu']= $prixMenu;
       ?>
 
           <div class="listePlat">
-              <input type="checkbox" name="choixPlat" value="<?php $donnees['id']; ?>" id="choixPlat">
+              <input type="checkbox" name="choixPlat" value="<?php echo $donnees['id']; ?>" id="choixPlat">
                   <label for="choixPlat">
                       <h3> <?php echo $donnees['nom']; ?></h3>  <img class="imgChoix" src="<?php echo $donnees['image']; ?>" alt="image Plat">
                   </label>

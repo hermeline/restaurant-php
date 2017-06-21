@@ -6,7 +6,8 @@
     <link rel="stylesheet" href="assets/style.css">
   </head>
   <body>
-
+    <div class="container list">
+      <h1>Liste des plats</h1>
     <?php
     require_once 'config/connexion.php';
 
@@ -16,18 +17,16 @@
     while ($donnees = $reponse->fetch())
     {
       ?>
-    <div class="listePlat">
-        <h3> <?php echo $donnees['nom']; ?> <span> <?php echo $donnees['prix']; ?> € </span> </h3>
-        <img src="<?php echo $donnees['image']; ?>" alt="image Plat">
-    </div>
+      <div class="listePlat">
+          <h3> <?php echo $donnees['nom']; ?> <span> <?php echo $donnees['prix']; ?> € </span> </h3>
+          <img src="<?php echo $donnees['image']; ?>" alt="image Plat">
+      </div>
       <?php
     }
 
     $reponse->closeCursor();
-
-
-
-
     ?>
+
+    </div>
   </body>
 </html>
