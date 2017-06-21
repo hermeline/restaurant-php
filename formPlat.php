@@ -12,10 +12,10 @@
 
         <form class="ajoutPlat" action="postPlat.php" method="post" enctype="multipart/form-data">
               <label for="nomPlat">Entrez le nom du plat :</label>
-              <input type="text" name="nomPlat" value="">
+              <input type="text" name="nomPlat" value=""> </br>
 
               <label for="prixPlat">Prix du plat :</label>
-              <input class="euro" type="text" name="prixPlat" value="">
+              <input type="text" name="prixPlat" value=""> <span> € </span>
 
               <label for="imgPlat">Téléchargez une photo du plat :</label>
               <input type="file" name="imgPlat" value="">

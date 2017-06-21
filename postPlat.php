@@ -28,7 +28,7 @@
         {
           // On peut valider le fichier et le stocker définitivement
           move_uploaded_file($_FILES['imgPlat']['tmp_name'], 'uploads/' . basename($_FILES['imgPlat']['name']));
-          echo 'L\'envoi a bien été effectué !';
+          echo 'Le repas a bien été créé !';
         }
       }
     }

@@ -24,26 +24,36 @@ h1{
   height: 700px;
 }
 .list{
-  height: auto;
-  background-size: contain;
+  height: 1200px;
+  background-size: cover;
+  background-repeat: repeat-x;
   background-attachment: fixed;
-  display: flex;
-  flex-flow: row wrap;
+  /*display: flex;
+  flex-flow: row wrap;*/
 }
-.ajoutPlat {
+.ajoutPlat, .ajoutMenu, .choixPlat{
   background-color: white;
   width: 30%;
+  /*height: 70%;*/
   padding: 2%;
   margin-left: auto;
   margin-right: auto;
 }
-.ajoutPlat input{
+.ajoutPlat input, .ajoutMenu input, .choixPlat input[type=submit]{
   margin-bottom: 4%;
   margin-top: 2%;
-  width: 100%;
+  width: 90%;
 }
 input[type=text]:focus {
     border: 3px solid #555;
+}
+input[type=submit] {
+    background-color: #6F6678;
+    border-radius: 5px 5px;
+    color:white;
+    padding: 3% 0;
+    font-family: 'Bubbler One', sans-serif;
+    font-size: 1.5em;
 }
 
 .envoiOk, .listePlat{
@@ -75,16 +85,38 @@ a{
 }
 
 .listePlat{
-  width: 30%;
+  width: 27%;
+  height: auto;
   display: flex;
   justify-content: space-between;
   flex-direction: column;
   flex-wrap: wrap;
+  margin-top:5px;
+  padding-bottom: 5px;
+  padding-top:0;
+  border: 1px solid #C4B4D4;
 }
-
+.resultat, .choixPlat{
+    display: flex;
+    flex-flow: row wrap;
+}
+.choixPlat{
+  width: 80%;
+}
+.btnMenu{
+  width: 100%;
+  margin-top: 10%;
+}
+.btnChoixMenu{
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 15px;
+}
 img{
   width: 200px;
   height: 100px;
   margin-left: auto;
   margin-right: auto;
+  padding: 5px;
 }
