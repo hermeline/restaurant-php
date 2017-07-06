@@ -12,7 +12,7 @@
           <?php
           require_once 'config/connexion.php';
 
-          $reponse = $bdd->query('SELECT * FROM plat');  // Requête SQL : On récupère tout le contenu de la table jeux_video
+          $reponse = $bdd->query('SELECT * FROM plat');  // Requête SQL : On récupère tout le contenu de la table plat
 
           // On affiche chaque entrée une à une avec une boucle
           while ($donnees = $reponse->fetch())
@@ -21,12 +21,14 @@
             <div class="listePlat">
                 <h3> <?php echo $donnees['nom']; ?> <span> <?php echo $donnees['prix']; ?> € </span> </h3>
                 <img src="<?php echo $donnees['image']; ?>" alt="image Plat">
+                <a class="btnmodif" href="modifier.php?id=<?php echo $donnees['id']; ?>">Modifier ce plat</a>
+                <a class="btnmodif supp" href="supprimer.php?id=<?php echo $donnees['id']; ?>">Supprimer ce plat</a>
             </div>
             <?php
           }
-
           $reponse->closeCursor();
           ?>
+
         </div>
     </div>
   </body>
