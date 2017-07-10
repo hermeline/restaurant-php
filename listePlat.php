@@ -14,15 +14,16 @@
 
           $reponse = $bdd->query('SELECT * FROM plat');  // Requête SQL : On récupère tout le contenu de la table plat
 
-          // On affiche chaque entrée une à une avec une boucle
+          // On affiche chaque entrée une à une dans une div différente grâce une boucle
           while ($donnees = $reponse->fetch())
           {
             ?>
             <div class="listePlat">
                 <h3> <?php echo $donnees['nom']; ?> <span> <?php echo $donnees['prix']; ?> € </span> </h3>
                 <img src="<?php echo $donnees['image']; ?>" alt="image Plat">
-                <a class="btnmodif" href="modifier.php?id=<?php echo $donnees['id']; ?>">Modifier ce plat</a>
-                <a class="btnmodif supp" href="supprimer.php?id=<?php echo $donnees['id']; ?>">Supprimer ce plat</a>
+                <!-- Liens pour modifier et pour supprimer le Menu en insérant l'id du menu dans l'url pour pouvoir ensuite le récupérer en GET -->
+                <a class="btnmodif" href="modifierMenu.php?id=<?php echo $donnees['id']; ?>">Modifier ce menu</a>
+                <a class="btnmodif supp" href="supprimerMenu.php?id=<?php echo $donnees['id']; ?>">Supprimer ce menu</a>
             </div>
             <?php
           }

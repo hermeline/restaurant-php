@@ -1,4 +1,3 @@
-<?php session_start() ?>
 <!DOCTYPE html>
 <html>
   <head>
@@ -12,8 +11,11 @@
       <div class="resultat">
           <?php
           require_once 'config/connexion.php';
-
-        $reponse = $bdd->query('SELECT plat.image as plat_image, menu.nom as nom_menu, menu.prix as prix_menu  FROM plat, menu WHERE plat.id=menu.id_plat ');
+          // Triple jointure, récupérant le nom + prix de la table + les noms des plats (concat)
+          $reponse = $bdd->query('SELECT menu.id as id_du_menu, menu.nom as nom_menu, menu.prix as prix_menu, GROUP_CONCAT( plat.nom SEPARATOR " </br> ") AS concat_nomPlat FROM relation_menu_plat
+          LEFT JOIN plat ON id_plat = plat.id
+          LEFT JOIN menu ON id_menu = menu.id
+          GROUP BY menu.id');
 
           // On affiche chaque entrée une à une avec une boucle
           while ($donnees = $reponse->fetch())
@@ -21,7 +23,10 @@
             ?>
             <div class="listePlat">
                 <h3> Menu <?php echo $donnees['nom_menu']; ?> <span> <?php echo $donnees['prix_menu']; ?> € </span> </h3>
-                <img src="<?php echo $donnees['plat_image']; ?>" alt="image Plat">
+                <?php echo $donnees['concat_nomPlat']; ?>
+                <!-- Liens pour modifier et pour supprimer le plat en insérant l'id du plat dans l'url pour pouvoir ensuite le récupérer en GET -->
+                <a class="btnmodif" href="modifierMenu.php?id=<?php echo $donnees['id_du_menu']; ?>">Modifier ce plat</a>
+                <a class="btnmodif supp" href="supprimerMenu.php?id=<?php echo $donnees['id_du_menu']; ?>">Supprimer ce plat</a>
             </div>
             <?php
           }

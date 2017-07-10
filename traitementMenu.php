@@ -1,4 +1,3 @@
-<?php session_start() ?>
 <!DOCTYPE html>
 <html>
   <head>
@@ -12,26 +11,37 @@
         <p class="textEnvoiOk">
 
           <?php
-          session_start();
-          $id_plat = $_POST['choixPlat'];
-          $_SESSION['choixPlat']= $id_plat;
-
           require_once 'config/connexion.php';
-
+          //
           try
           {
-              $req = $bdd->prepare('INSERT INTO menu(id_plat, nom, prix) VALUES(:id_plat, :nom, :prix)');
-              $req->execute(array(
-                'id_plat' => $_SESSION['choixPlat'],
-                'nom' => $_SESSION['nomMenu'],
-                'prix' => $_SESSION['prixMenu'],
-              ));
-              $req->closeCursor();
-              echo "Menu bien envoyé !";
-            }catch(Exception $e)
+              $id= $_GET['id'];  // On récupère par un GET l'id du menu créé juste avant et récupéré avec lastInsertId
+              //  var_dump($id);
+
+              foreach($_POST['checkbox'] as $k => $check){  // Boucle pour que chaque checkbox cochée insère une nouvelle entrée dans la base relation_menu_plat
+                   $check=intval($check);
+                    // var_dump($check);
+                         if (isset($_POST['checkbox']))
+                         {
+                            //  var_dump($id);
+                             $req = $bdd->prepare('INSERT INTO relation_menu_plat(id_menu, id_plat) VALUES(:menu, :checkbox)');
+                             $req->execute(array(
+                                 'menu' => $id,
+                                 'checkbox' => $check
+                                 ));
+                          }
+                       else
+                       {
+                        echo 'Vous n\'avez pas selectionné de plat pour votre menu';
+                       }
+                      $req->closeCursor();
+                }
+            echo "Votre menu a bien été envoyé !";
+
+          }catch(Exception $e)  //Si le menu n'a pas pu s'envoyer :
             {
                     die('Erreur : '.$e->getMessage());
-                    echo "Votre menu n'a pas pu s'envoyer, merci de rééssayer ";
+                    echo "Votre menu n'a pas pu s'envoyer, merci de rééssayer :) ";
             }
 
           ?>
