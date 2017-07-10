@@ -9,12 +9,12 @@
     <div class="container list">
       <h1>Bienvenue sur votre espace de gestion de carte</h1>
       <div class="accueil">
-        <h3>Votre carte :</h3>
-        <a href="#">Voir vos plats</a>
-        <a href="#">Voir vos menus</a>
-        <h3>Enrichir votre carte : </h3>
-        <a href="#">Ajouter un plat</a>
-        <a href="#">Ajouter un menu</a>
+        <h2>Votre carte :</h2>
+        <a href="listePlat.php">Voir vos plats</a>
+        <a href="listeMenu.php">Voir vos menus</a>
+        <h2>Enrichir votre carte : </h2>
+        <a href="formPlat.php">Ajouter un plat</a>
+        <a href="formMenu.php">Ajouter un menu</a>
       </div>
 
     </div>

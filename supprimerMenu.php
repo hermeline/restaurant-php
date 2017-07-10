@@ -14,24 +14,25 @@
     try{
         require_once('config/connexion.php');
 
-        $id= $_GET['id'];
-        $req = $bdd->prepare('DELETE FROM menu WHERE id = :id IN (SELECT * FROM relation_menu_plat)');
+        $id= $_GET['id'];  // On récupère l'id du menu
+
+        $req = $bdd->prepare('DELETE FROM menu WHERE id = :id');
         $req->execute(array(
         	'id' => $id,
         	));
 
-        echo "Le plat a bien été supprimé !";
+        echo "Le menu a bien été supprimé !";
         $req->closeCursor();
     }
     catch(Exception $e)
     {
       die('Erreur : '.$e->getMessage());
-      echo "Le plat n'a pas été supprimé, merci de rééssayer :)";
+      echo "Le menu n'a pas été supprimé, merci de rééssayer :)";
     }
 
   ?>
         </p>
-        <a href="listePlat.php"> Voir les plats</a>
+        <a href="index.php"> Retour à l'accueil</a>
       </div>
     </div>
   </body>

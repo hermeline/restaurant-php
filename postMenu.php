@@ -25,7 +25,7 @@
                   // var_dump($idDernierMenu);
                   ?>
 
-                  <form class="choixPlat" action="traitementMenu.php?id=<?php echo $idDernierMenu; // on met dans le lien l'id du dernier menu pour pouvroi le recup avec GET ?>" method="post">
+                  <form class="choixPlat" action="traitementMenu.php?id=<?php echo $idDernierMenu;// on met dans le lien l'id du dernier menu pour pouvroi le recup avec GET ?>" method="post">
                     <?php
                   $reponse = $bdd->query('SELECT * FROM plat'); // Récup des données de la table plat
 
