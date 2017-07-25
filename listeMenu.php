@@ -23,10 +23,10 @@
             ?>
             <div class="listePlat">
                 <h3> Menu <?php echo $donnees['nom_menu']; ?> <span> <?php echo $donnees['prix_menu']; ?> € </span> </h3>
-                <?php echo $donnees['concat_nomPlat']; ?>
+                <p><?php echo $donnees['concat_nomPlat']; ?> </p>
                 <!-- Liens pour modifier et pour supprimer le plat en insérant l'id du plat dans l'url pour pouvoir ensuite le récupérer en GET -->
-                <a class="btnmodif" href="modifierMenu.php?id=<?php echo $donnees['id_du_menu']; ?>">Modifier ce plat</a>
-                <a class="btnmodif supp" href="supprimerMenu.php?id=<?php echo $donnees['id_du_menu']; ?>">Supprimer ce plat</a>
+                <a class="btnmodif" href="modifierMenu.php?id=<?php echo $donnees['id_du_menu']; ?>">Modifier ce menu</a>
+                <a class="btnmodif supp" href="supprimerMenu.php?id=<?php echo $donnees['id_du_menu']; ?>">Supprimer ce menu</a>
             </div>
             <?php
           }

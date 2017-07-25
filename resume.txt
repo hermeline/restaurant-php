@@ -1,0 +1,7 @@
+Application de gestion de plats et menus pour restaurant. 
+
+Depuis l'index : 
+
+Une partie Ajout pour les plats + une pour les menus
+
+Partie Affichage de tous les plats + Affichage des Menus avec leurs plats associés ainsi que les possibilités de modification et suppresion des menus.

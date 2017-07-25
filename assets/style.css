@@ -83,16 +83,38 @@ a{
   font-size: 1.5em;
   color: white;
 }
+a:hover{
+  box-shadow: grey 4px 4px 4px;
+  /*background-color: #978BA3;*/
+
+background-color: #472632;
+}
 
 .accueil {
+  display: flex;
+  justify-content: space-between;
+  flex-flow: raw wrap;
+  align-items: center;
+  margin-top: -46px;
+}
+.boxLireCarte, .boxEnrichirCarte{
+  width: 50%;
   display: flex;
   justify-content: space-between;
   flex-flow: column wrap;
   align-items: center;
 }
 
+/*.boxLireCarte{
+  border-right: 1px grey solid;
+}*/
+
 .accueil a {
   margin-bottom: 15px;
+  padding-top: 26px;
+  margin-top: 35px;
+  width: 280px;
+  height: 49px;
 }
 
 .listePlat{
@@ -135,4 +157,105 @@ img{
   width: 80%;
   padding: 2%;
   margin: 5px auto;
+}
+
+@media screen and (min-width : 1000px) {
+  .accueil {
+    width: 80%;
+    flex-flow: raw wrap;
+  }
+  .boxLireCarte, .boxEnrichirCarte{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    flex-flow: column wrap;
+    align-items: center;
+  }
+}
+
+ /*CSS pour écran - de 900 px de large*/
+@media screen and (max-width : 999px) {
+
+  .ajoutPlat, .ajoutMenu, .choixPlat, .accueil{
+    width: 70%;
+    flex-flow: column wrap;
+  }
+
+  .boxLireCarte, .boxEnrichirCarte{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    flex-flow: column wrap;
+    align-items: center;
+  }
+
+}
+
+/*CSS pour écran - de 768 px de large*/
+@media screen and (max-width : 768px) {
+
+  .listePlat{
+    width: 41%;
+  }
+
+  .ajoutPlat, .ajoutMenu, .choixPlat, .accueil {
+    width: 75%;
+  }
+
+  h1 {
+    font-size: 3.3em;
+  }
+  .envoiOk, .listePlat {
+    background-color: white;
+    width: 75%;
+  }
+}
+
+/*CSS pour écran - de 500 px de large*/
+@media screen and (max-width : 768px) {
+  h1{
+    margin-bottom: 15%;
+  }
+  p{
+    font-size: 1.8em;
+  }
+}
+
+/*CSS pour écran - de 500 px de large*/
+@media screen and (max-width : 768px) {
+  h1{
+    margin-bottom: 15%;
+  }
+  p{
+    font-size: 1.8em;
+  }
+}
+
+/*CSS pour écran - de 380 px de large*/
+@media screen and (max-width : 380px) {
+  h1{
+    margin-bottom: 18%;
+    font-size: 2.5em;
+  }
+  .ajoutPlat, .ajoutMenu, .choixPlat, .accueil {
+    width: 85%;
+  }
+}
+
+/*CSS pour écran - de 340 px de large*/
+@media screen and (max-width : 340px) {
+  .accueil a {
+      width: 220px;
+  }
+  h1{
+    font-size: 2.1em;
+    margin-bottom: 25%;
+  }
+}
+
+/*CSS pour écran - de 280 px de large*/
+@media screen and (max-width : 280px) {
+  .accueil a {
+      width: 200px;
+  }
 }

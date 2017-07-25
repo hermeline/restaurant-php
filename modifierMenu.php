@@ -13,7 +13,7 @@
             <label for="nomMenu">Entrez le nouveau nom du menu :</label>
             <input type="text" name="nomMenu" value=""> </br>
 
-            <label for="prixMenu">Prix du plat :</label>
+            <label for="prixMenu">Prix du menu :</label>
             <input type="text" name="prixMenu" value=""> <span> € </span>
 
             <input type="submit" name="envoiModif" value="Envoyer mes modifications">
