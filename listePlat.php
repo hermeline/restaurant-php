@@ -4,9 +4,11 @@
     <meta charset="utf-8">
     <title>Liste des Plats</title>
     <link rel="stylesheet" href="assets/style.css">
+    <script src="https://use.fontawesome.com/3f248260d5.js"></script>
   </head>
   <body>
     <div class="container list">
+      <a class="home" href="index.php"> <i class="fa fa-home fa-3x" aria-hidden="true"></i> </a>
       <h1>Liste des plats</h1>
       <div class="resultat">
           <?php

@@ -23,6 +23,12 @@ h1{
   padding-top:0;
   height: 700px;
 }
+.home, .home:hover{
+  float: left;
+  background: none;
+  border: none;
+  box-shadow: none;
+}
 .list{
   height: 1200px;
   background-size: cover;

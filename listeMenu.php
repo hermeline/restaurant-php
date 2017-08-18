@@ -4,9 +4,12 @@
     <meta charset="utf-8">
     <title>Liste des Menus</title>
     <link rel="stylesheet" href="assets/style.css">
+    <script src="https://use.fontawesome.com/3f248260d5.js"></script>
   </head>
   <body>
     <div class="container list">
+      <a class="home" href="index.php"> <i class="fa fa-home fa-3x" aria-hidden="true"></i> </a>
+
       <h1>Nos Menus</h1>
       <div class="resultat">
           <?php
@@ -20,6 +23,7 @@
           // On affiche chaque entrée une à une avec une boucle
           while ($donnees = $reponse->fetch())
           {
+            if (isset($donnees['nom_menu']) && !empty($donnees['nom_menu'])) {
             ?>
             <div class="listePlat">
                 <h3> Menu <?php echo $donnees['nom_menu']; ?> <span> <?php echo $donnees['prix_menu']; ?> € </span> </h3>
@@ -29,6 +33,7 @@
                 <a class="btnmodif supp" href="supprimerMenu.php?id=<?php echo $donnees['id_du_menu']; ?>">Supprimer ce menu</a>
             </div>
             <?php
+          }
           }
 
           $reponse->closeCursor();
